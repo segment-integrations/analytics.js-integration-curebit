@@ -1,5 +1,5 @@
 {
-  "name": "analytics.js-integration-curebit",
+  "name": "analytics.js-integration-talkable",
   "description": "The Curebit analytics.js integration.",
   "author": "Segment <friends@segment.com>",
   "license": "MIT",
@@ -12,13 +12,13 @@
     "npm": ">=2.7.0"
   },
   "repository": {
-    "url": "https://github.com/segment-integrations/analytics.js-integration-curebit.git",
+    "url": "https://github.com/segment-integrations/analytics.js-integration-talkable.git",
     "type": "git"
   },
   "bugs": {
-    "url": "https://github.com/segment-integrations/analytics.js-integration-curebit/issues"
+    "url": "https://github.com/segment-integrations/analytics.js-integration-talkable/issues"
   },
-  "homepage": "https://segment.com/docs/integrations/curebit/",
+  "homepage": "https://segment.com/docs/integrations/talkable/",
   "dependencies": {},
   "devDependencies": {
     "duo": "0.12.x",
