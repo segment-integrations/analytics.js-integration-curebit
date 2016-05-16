@@ -1,6 +1,6 @@
 {
-  "name": "analytics.js-integration-curebit",
-  "repo": "segment-integrations/analytics.js-integration-curebit",
+  "name": "analytics.js-integration-talkable",
+  "repo": "segment-integrations/analytics.js-integration-talkable",
   "description": "The Curebit analytics.js integration.",
   "version": "1.0.6",
   "license": "MIT",

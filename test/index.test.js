@@ -4,11 +4,11 @@ var integration = require('analytics.js-integration');
 var iso = require('to-iso-string');
 var sandbox = require('clear-env');
 var tester = require('analytics.js-integration-tester');
-var Curebit = require('../lib/');
+var Talkable = require('../lib/');
 
-describe('Curebit', function() {
+describe('Talkable', function() {
   var analytics;
-  var curebit;
+  var talkable;
   var options = {
     siteId: 'curebit-87ab995d-736b-45ba-ac41-71f4dbb5c74a',
     server: 'https://api.segment.io/track'
@@ -16,10 +16,10 @@ describe('Curebit', function() {
 
   beforeEach(function() {
     analytics = new Analytics();
-    curebit = new Curebit(options);
-    analytics.use(Curebit);
+    talkable = new Talkable(options);
+    analytics.use(Talkable);
     analytics.use(tester);
-    analytics.add(curebit);
+    analytics.add(talkable);
   });
 
   afterEach(function() {
@@ -30,7 +30,7 @@ describe('Curebit', function() {
   });
 
   it('should have the correct settings', function() {
-    analytics.compare(Curebit, integration('Curebit')
+    analytics.compare(Talkable, integration('Talkable')
       .global('_curebitq')
       .global('curebit')
       .option('campaigns', {})
@@ -48,7 +48,7 @@ describe('Curebit', function() {
 
   describe('before loading', function() {
     beforeEach(function() {
-      analytics.stub(curebit, 'load');
+      analytics.stub(talkable, 'load');
     });
 
     describe('#initialize', function() {
@@ -62,19 +62,19 @@ describe('Curebit', function() {
 
       it('should call #load', function() {
         analytics.initialize();
-        analytics.called(curebit.load);
+        analytics.called(talkable.load);
       });
     });
   });
 
   describe('loading', function() {
     it('should load without custom url', function(done) {
-      analytics.load(curebit, done);
+      analytics.load(talkable, done);
     });
 
     it('should load with custom url', function(done) {
-      curebit.options.customUrl = '//d2jjzw81hqbuqv.cloudfront.net/integration/clients/ayr.min.js';
-      analytics.load(curebit, done);
+      talkable.options.customUrl = '//d2jjzw81hqbuqv.cloudfront.net/integration/clients/ayr.min.js';
+      analytics.load(talkable, done);
     });
   });
 
@@ -90,7 +90,7 @@ describe('Curebit', function() {
       });
 
       it('should not register affiliate when the url doesnt match', function() {
-        curebit.options.campaigns = { '/share': 'share,test' };
+        talkable.options.campaigns = { '/share': 'share,test' };
         analytics.page();
         analytics.didNotCall(window._curebitq.push);
       });
@@ -98,8 +98,8 @@ describe('Curebit', function() {
       it('should register affiliate when the url matches', function() {
         var campaigns = {};
         campaigns[window.location.pathname] = 'share,test';
-        curebit.options.campaigns = campaigns;
-        curebit.options.iframeId = 'curebit_integration';
+        talkable.options.campaigns = campaigns;
+        talkable.options.iframeId = 'curebit_integration';
         analytics.page();
         analytics.called(window._curebitq.push, ['register_affiliate', {
           responsive: true,
@@ -118,7 +118,7 @@ describe('Curebit', function() {
       it('should register affiliate with affiliate member info', function() {
         var campaigns = {};
         campaigns[window.location.pathname] = 'share,test';
-        curebit.options.campaigns = campaigns;
+        talkable.options.campaigns = campaigns;
         analytics.identify('id', {
           name: 'first last',
           email: 'name@example.com'
@@ -148,7 +148,7 @@ describe('Curebit', function() {
         window._curebitq = [];
         var campaigns = {};
         campaigns[window.location.pathname] = 'share,test';
-        curebit.options.campaigns = campaigns;
+        talkable.options.campaigns = campaigns;
         analytics.page();
         analytics.page();
         analytics.page();
