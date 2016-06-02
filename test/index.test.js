@@ -159,7 +159,7 @@ describe('Curebit', function() {
       });
     });
 
-    describe('#completedOrder', function() {
+    describe('#orderCompleted', function() {
       beforeEach(function() {
         analytics.stub(window._curebitq, 'push');
       });
@@ -167,7 +167,7 @@ describe('Curebit', function() {
       it('should send ecommerce data', function() {
         var date = new Date();
 
-        analytics.track('completed order', {
+        analytics.track('order completed', {
           orderId: 'ab535a52',
           coupon: 'save20',
           date: date,
