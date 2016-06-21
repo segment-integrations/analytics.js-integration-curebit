@@ -1,9 +1,10 @@
+'use strict';
 
-var Analytics = require('analytics.js-core').constructor;
-var integration = require('analytics.js-integration');
-var iso = require('to-iso-string');
-var sandbox = require('clear-env');
-var tester = require('analytics.js-integration-tester');
+var Analytics = require('@segment/analytics.js-core').constructor;
+var integration = require('@segment/analytics.js-integration');
+var iso = require('@segment/to-iso-string');
+var sandbox = require('@segment/clear-env');
+var tester = require('@segment/analytics.js-integration-tester');
 var Curebit = require('../lib/');
 
 describe('Curebit', function() {
@@ -73,7 +74,7 @@ describe('Curebit', function() {
     });
 
     it('should load with custom url', function(done) {
-      curebit.options.customUrl = '//d2jjzw81hqbuqv.cloudfront.net/integration/clients/ayr.min.js';
+      curebit.options.customUrl = '/base/test/support/alternate-script.js';
       analytics.load(curebit, done);
     });
   });
