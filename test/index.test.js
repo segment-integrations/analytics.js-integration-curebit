@@ -168,11 +168,12 @@ describe('Curebit', function() {
         var date = new Date();
 
         analytics.track('order completed', {
-          orderId: 'ab535a52',
+          order_id: 'ab535a52',
           coupon: 'save20',
           date: date,
           total: 647.92,
           products: [{
+            product_id: 'yolo',
             sku: '5be59f56',
             quantity: 8,
             price: 80.99,
@@ -192,7 +193,7 @@ describe('Curebit', function() {
           order_number: 'ab535a52',
           subtotal: 647.92,
           items: [{
-            product_id: '5be59f56',
+            product_id: 'yolo',
             quantity: 8,
             price: 80.99,
             title: 'my-product',
