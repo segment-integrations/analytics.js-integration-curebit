@@ -1,3 +1,3 @@
 ;(function() {
-  window.curebit = {};
+  window.talkable = {};
 }());

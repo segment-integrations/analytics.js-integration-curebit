@@ -1,12 +1,12 @@
 {
-  "name": "@segment/analytics.js-integration-curebit",
-  "description": "The Curebit analytics.js integration.",
-  "version": "2.2.0",
+  "name": "@segment/analytics.js-integration-talkable",
+  "description": "The Talkable analytics.js integration.",
+  "version": "2.3.0",
   "keywords": [
     "analytics.js",
     "analytics.js-integration",
     "segment",
-    "curebit"
+    "talkable"
   ],
   "main": "lib/index.js",
   "scripts": {
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/segment-integrations/analytics.js-integration-curebit.git"
+    "url": "git+https://github.com/segment-integrations/analytics.js-integration-talkable.git"
   },
   "author": "Segment <friends@segment.com>",
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
-    "url": "https://github.com/segment-integrations/analytics.js-integration-curebit/issues"
+    "url": "https://github.com/segment-integrations/analytics.js-integration-talkable/issues"
   },
-  "homepage": "https://github.com/segment-integrations/analytics.js-integration-curebit#readme",
+  "homepage": "https://github.com/segment-integrations/analytics.js-integration-talkable#readme",
   "dependencies": {
     "@ndhoule/each": "^2.0.1",
     "@segment/analytics.js-integration": "^3.1.0",
