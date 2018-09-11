@@ -2,7 +2,6 @@
 
 var Analytics = require('@segment/analytics.js-core').constructor;
 var integration = require('@segment/analytics.js-integration');
-var iso = require('@segment/to-iso-string');
 var sandbox = require('@segment/clear-env');
 var tester = require('@segment/analytics.js-integration-tester');
 var Talkable = require('../lib/');
@@ -187,7 +186,6 @@ describe('Talkable', function() {
           coupon_code: 'save20',
           customer_id: null,
           email: undefined,
-          order_date: iso(date),
           first_name: undefined,
           last_name: undefined,
           order_number: 'ab535a52',
